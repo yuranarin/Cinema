@@ -50,7 +50,7 @@ namespace Cinema
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {            
+        {
             string username = LoginTextBox.Text;
             string password = PasswordBox.Password;
             //WIP: anti-injection input tests
@@ -104,7 +104,9 @@ namespace Cinema
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            //REMEMBER: this is just for demonstration purposes.
+            NavigationService.Navigate(DBInteraction.DisplayOrderedSeats(DateTime.Now, new DBInteraction.Cinema { Name = "test" }));
+            //Environment.Exit(0);
         }
     }
 }
